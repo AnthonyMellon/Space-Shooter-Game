@@ -15,27 +15,55 @@ namespace Asteroids
     {
         Game_Controller controller;
 
-        KeyEventArgs key;
+        int velHorizontal;
+        int velVertical;        
 
         public Form1()
         {
             InitializeComponent();
 
             controller = new Game_Controller();
-            Controls.Add(controller.getPlayerSprite(groupBoxGame, 0));
-            key = new KeyEventArgs(Keys.KeyCode);
+            Controls.Add(controller.getPlayerSprite(groupBoxGame, 0));          
 
             groupBoxGame.SendToBack();            
         }
 
         private void timerGame_Tick(object sender, EventArgs e)
-        {                        
-            controller.GameFrame(key);
+        {                          
+            controller.GameFrame(velHorizontal, velVertical);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            key = e;
+            if (e.KeyCode == Keys.Up)
+            {
+                velVertical = 1;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                velVertical = -1;
+            }
+
+            if (e.KeyCode == Keys.Left)
+            {
+                velHorizontal = 1;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                velHorizontal = -1;
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+            {
+                velVertical = 0;
+            }
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            {
+                velHorizontal = 0;
+            }
         }
     }
 }

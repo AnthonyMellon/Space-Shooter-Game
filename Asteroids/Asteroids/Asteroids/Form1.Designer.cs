@@ -97,6 +97,8 @@
             this.textBox_PLYR_ROT.ReadOnly = true;
             this.textBox_PLYR_ROT.Size = new System.Drawing.Size(100, 20);
             this.textBox_PLYR_ROT.TabIndex = 2;
+            this.textBox_PLYR_ROT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.textBox_PLYR_ROT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             // 
             // textBox_PLYR_Y
             // 
@@ -105,6 +107,8 @@
             this.textBox_PLYR_Y.ReadOnly = true;
             this.textBox_PLYR_Y.Size = new System.Drawing.Size(100, 20);
             this.textBox_PLYR_Y.TabIndex = 1;
+            this.textBox_PLYR_Y.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.textBox_PLYR_Y.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             // 
             // textBox_PLYR_X
             // 
@@ -113,6 +117,8 @@
             this.textBox_PLYR_X.ReadOnly = true;
             this.textBox_PLYR_X.Size = new System.Drawing.Size(100, 20);
             this.textBox_PLYR_X.TabIndex = 0;
+            this.textBox_PLYR_X.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.textBox_PLYR_X.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             // 
             // timerGame
             // 
@@ -129,6 +135,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.groupBoxUI.ResumeLayout(false);
             this.groupBoxUI.PerformLayout();
             this.ResumeLayout(false);

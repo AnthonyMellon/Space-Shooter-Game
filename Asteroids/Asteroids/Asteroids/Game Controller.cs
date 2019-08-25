@@ -28,11 +28,11 @@ namespace Asteroids
             return players[playerIndex].newSprite(gameBox, playerIndex);            
         }
 
-        public void GameFrame(KeyEventArgs key) //The main game loop
+        public void GameFrame(int velHorizontal, int velVertical) //The main game loop
         {            
             foreach (Player player in players) //Move all the players
             {
-                player.MovePlayer(key);
+                player.MovePlayer(velHorizontal, velVertical);
             }
         }
     }

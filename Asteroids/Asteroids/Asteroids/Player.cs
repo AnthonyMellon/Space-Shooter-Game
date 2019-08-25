@@ -48,24 +48,28 @@ namespace Asteroids
             return playerSprite;
         }
 
-        public void MovePlayer(KeyEventArgs key) //Changes the players position
+        public void MovePlayer(int velHorizontal, int velVertical) //Changes the players position
         {
             const int playerSpeed = 10;
-            switch (key.KeyCode)
-            {
-                case Keys.Up:
-                    playerSprite.Top += playerSpeed;
-                    break;
-                case Keys.Down:
-                    playerSprite.Top -= playerSpeed;
-                    break;
-                case Keys.Left:
-                    playerSprite.Left -= playerSpeed;
-                    break;
-                case Keys.Right:
-                    playerSprite.Left += playerSpeed;
-                    break;
-            }
+
+            playerSprite.Top -= (velVertical * playerSpeed);
+            playerSprite.Left -= (velHorizontal * playerSpeed);
+
+            //switch (key)
+            //{
+            //    case Keys.Up:
+            //        playerSprite.Top -= playerSpeed;
+            //        break;
+            //    case Keys.Down:
+            //        playerSprite.Top += playerSpeed;
+            //        break;
+            //    case Keys.Left:
+            //        playerSprite.Left -= playerSpeed;
+            //        break;
+            //    case Keys.Right:
+            //        playerSprite.Left += playerSpeed;
+            //        break;
+            //}
 
         }        
     }
