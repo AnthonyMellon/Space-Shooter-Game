@@ -52,25 +52,19 @@ namespace Asteroids
         {
             const int playerSpeed = 10;
 
-            playerSprite.Top -= (velVertical * playerSpeed);
-            playerSprite.Left -= (velHorizontal * playerSpeed);
+            Tuple<int, int> velocity; //Item 1 = X, item 2 = Y
+            velocity = getVelocity(velHorizontal, velVertical);
 
-            //switch (key)
-            //{
-            //    case Keys.Up:
-            //        playerSprite.Top -= playerSpeed;
-            //        break;
-            //    case Keys.Down:
-            //        playerSprite.Top += playerSpeed;
-            //        break;
-            //    case Keys.Left:
-            //        playerSprite.Left -= playerSpeed;
-            //        break;
-            //    case Keys.Right:
-            //        playerSprite.Left += playerSpeed;
-            //        break;
-            //}
-
+            playerSprite.Top -= (playerSpeed * velocity.Item1);
+            playerSprite.Left -= (playerSpeed * velocity.Item2);
         }        
+
+        private Tuple<int, int> getVelocity(int velHorizontal, int velVertical) //Get velocities X and Y components
+        {
+            int x = 0;
+            int y = 0;
+
+            return Tuple.Create(x, y); //Item 1 is X, item 2 is Y
+        }
     }
 }
